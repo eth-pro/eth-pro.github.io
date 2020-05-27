@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><link rel=icon href=/favicon.ico><title>ETH PRO</title><style>.clean {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        z-index: 10;
+        background: green;
+        opacity: 0.4;
+        border-radius: 10px;
+        width: 80px;
+        color: #fff;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        display: none;
+      }</style><link href=/css/About.760f065f.css rel=prefetch><link href=/css/EPRO.4896f318.css rel=prefetch><link href=/css/Home.671f66a2.css rel=prefetch><link href=/js/About.ef16dfed.js rel=prefetch><link href=/js/EPRO.00c3766b.js rel=prefetch><link href=/js/EPRO~Home.927d1bf3.js rel=prefetch><link href=/js/Home.fd0e4fa8.js rel=prefetch><link href=/css/app.99b3470d.css rel=preload as=style><link href=/css/chunk-vendors.4cee519b.css rel=preload as=style><link href=/js/app.d0ff71b1.js rel=preload as=script><link href=/js/chunk-vendors.065b7627.js rel=preload as=script><link href=/css/chunk-vendors.4cee519b.css rel=stylesheet><link href=/css/app.99b3470d.css rel=stylesheet></head><body><noscript><strong>We're sorry but etherminer doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><div id=clean class=clean>clean</div><script>var is_debug = getQueryVariable('debug')
+        if(is_debug == 1){
+          document.getElementById('clean').style = "display: block;";
+          // add console
+          (function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
+        }
+        function delCookie() {
+          var keys = document.cookie.match(/[^ =;]+(?==)/g)
+          if (keys) {
+            for (var i = keys.length; i--;) {
+              document.cookie = keys[i] + '=0;path=/;expires=' + new Date(0).toUTCString() 
+              document.cookie = keys[i] + '=0;path=/;domain=' + document.domain + ';expires=' + new Date(0).toUTCString()
+            }
+          }
+        }
+        function getQueryVariable(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split("&");
+          for (var i=0;i<vars.length;i++) {
+                  var pair = vars[i].split("=");
+                  if(pair[0] == variable){return pair[1];}
+          }
+          return false;
+        }
+        document.getElementById('clean').addEventListener('click', function(){
+          if(typeof window.localStorage != 'undefined'){
+            localStorage.clear()
+          }
+          delCookie()
+          window.location.reload()
+        })</script><script src=/js/chunk-vendors.065b7627.js></script><script src=/js/app.d0ff71b1.js></script></body></html>
