@@ -52,11 +52,12 @@ async function printPlayers() {
 	});
 }
 
-async function printSonCount() {
+async function printSonCount(_from) {
 	web3.eth.getPastLogs({
 		address: "0x4607cde2730cd1389c665d02f5a7b09e680f9bdb",
 		topics: ["0xf2531eca1f304c5bd5f42fc86493d0467d9cfc7d8d3b13e59337d621c84d66d1"],
-		fromBlock: 0
+		fromBlock: _from,
+		toBlock: _from + 40320 - 1
 	}).then(function(a) {
 		console.log(a)
 		for(var i=0; i<a.length; i++) {
@@ -77,6 +78,8 @@ async function printSonCount() {
 			player.supNodeCount = web3.utils.toBN("0x" + a[i].data.substring(258, 322)).toNumber();
 			player.textContent = formatAddress(player.id) + ", " + formatAddress(player.parent) + ", " + player.investment + ", " + player.sonTotalAmount9 + ", " + player.sonCount + ", " + player.sonNodeCount + ", " + player.supNodeCount;
 		}
+		if(a.length > 0)
+			printSonCount(_from  + 40320);
 	});
 }
 
@@ -132,7 +135,7 @@ function printDistributionReward() {
 <body>
 <!--button type="button" onclick="initConnection()">initConnection</button-->
 <button type="button" onclick="printPlayers()">Print Players</button>
-<button type="button" onclick="printSonCount()">Print sonCount</button>
+<button type="button" onclick="printSonCount(10245374)">Print sonCount</button>
 <button type="button" onclick="printLogProfit()">Print logProfit</button>
 <button type="button" onclick="printDistributionReward()">Print distributionReward</button>
 <div id="players"></div>
